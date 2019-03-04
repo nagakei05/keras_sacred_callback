@@ -10,11 +10,11 @@ class SacredTracker(Callback):
     """
 
     def __init__(self, ex):
-        super(SacredTracker self).__init__()
+        super(SacredTracker, self).__init__()
         self.ex = ex
 
     def on_epoch_end(self, epoch, logs=None):
         logs = logs or {}
         for k in self.params['metrics']:
             if k in logs:
-                self.ex.log_scalar(k, logs[k]))
+                self.ex.log_scalar(k, logs[k])
